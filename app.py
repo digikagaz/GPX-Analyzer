@@ -125,6 +125,21 @@ with tab1:
 
         with col2:
             st.subheader("📈 Elevation Profile")
+            col_a, col_b = st.columns(2)
+            with col_a:
+                show_markers = st.checkbox(
+                    "Show segment markers", 
+                    value=True,
+                    help="Show or hide the vertical dashed lines for climbs/descents."
+                )
+            with col_b:
+                color_mode = st.radio(
+                    "Profile Coloring Style",
+                    ["Detailed Slope", "Average per Segment"],
+                    horizontal=True,
+                    help="Choose 'Detailed' to see slope variations or 'Average' for a single color per segment."
+                )
+                
             show_markers = st.checkbox(
                 "Show climb/descent markers on profile", 
                 value=True,
