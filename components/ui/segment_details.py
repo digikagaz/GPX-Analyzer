@@ -53,9 +53,11 @@ def show_segment_summary_and_details(df, full_df, kind="climb"):
                 ax1.grid(True, linestyle='--', alpha=0.6)
 
                 # Right: elevation profile, colored by slope
-                if "elevation" in segment_df.columns and not segment_df.empty:
+                # <<< CAMBIO: Se busca la columna 'ele' en lugar de 'elevation'
+                if "ele" in segment_df.columns and not segment_df.empty: 
                     x = (segment_df["distance_km"] - segment_df["distance_km"].iloc[0]).values
-                    y = segment_df["elevation"].values
+                    # <<< CAMBIO: Se usan los datos de la columna 'ele'
+                    y = segment_df["ele"].values 
                     slope = segment_df["plot_grade"].values
 
                     # Create a series of line segments for coloring
