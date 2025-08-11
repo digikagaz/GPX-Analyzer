@@ -98,6 +98,7 @@ def show_segment_summary_and_details(df, full_df, kind="climb"):
                     cbar.set_label('Slope (%)')
 
                 else:
+                    st.write(segment_df.columns)
                     ax2.text(0.5, 0.5, "No elevation data", ha="center", va="center", fontsize=10)
                     ax2.set_axis_off()
 
